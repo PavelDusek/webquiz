@@ -1,0 +1,35 @@
+ <!DOCTYPE html>
+
+<html>
+<head>
+    <style>
+        ol {
+            list-style-type: lower-alpha;
+        }
+    </style>
+    <script>
+        function highlight(id) {
+            document.getElementById(id).style.fontWeight = "bold";
+        }
+    </script>
+</head>
+
+<body>
+
+    {% for question in questions %}
+    {% set solution = question['solution'] %}
+    <fieldset id="{{loop.index}}">
+        <legend>{{question['text']}}</legend>
+        <ol>
+            <li id="{{loop.index}}a">{{question['a']}}</li>
+            <li id="{{loop.index}}b">{{question['b']}}</li>
+            <li id="{{loop.index}}c">{{question['c']}}</li>
+            <li id="{{loop.index}}d">{{question['d']}}</li>
+        </ol>
+        <button onClick="highlight('{{loop.index}}{{solution}}');">Show</button>
+    </fieldset>
+    <hr />
+    {% endfor %}
+
+</body>
+</html>
