@@ -18,7 +18,7 @@
 
     {% for question in questions %}
     {% set solution = question['solution'] %}
-    <fieldset id="{{loop.index}}">
+    <fieldset id="{{loop.index}}" onClick="highlight('{{loop.index}}{{solution}}');">
         <legend>{{question['text']}}</legend>
         <ol>
             <li id="{{loop.index}}a">{{question['a']}}</li>
@@ -26,7 +26,6 @@
             <li id="{{loop.index}}c">{{question['c']}}</li>
             <li id="{{loop.index}}d">{{question['d']}}</li>
         </ol>
-        <button onClick="highlight('{{loop.index}}{{solution}}');">Show</button>
     </fieldset>
     <hr />
     {% endfor %}
