@@ -19,18 +19,18 @@
     </script>
 </head>
 <body>
-    {% for question in questions %}
-    {% set solution = question['solution'] %}
-    <fieldset id="{{loop.index}}" onClick="toggle('{{loop.index}}{{solution}}');">
-        <legend>{{question['text']}}</legend>
+    
+    
+    <fieldset id="1" onClick="toggle('1a');">
+        <legend>The planet we live on is named:</legend>
         <ol>
-            <li id="{{loop.index}}a">{{question['a']}}</li>
-            <li id="{{loop.index}}b">{{question['b']}}</li>
-            <li id="{{loop.index}}c">{{question['c']}}</li>
-            <li id="{{loop.index}}d">{{question['d']}}</li>
+            <li id="1a">Earth</li>
+            <li id="1b">Pluto</li>
+            <li id="1c">Venus</li>
+            <li id="1d">Aldebaran</li>
         </ol>
     </fieldset>
     <hr />
-    {% endfor %}
+    
 </body>
 </html>
